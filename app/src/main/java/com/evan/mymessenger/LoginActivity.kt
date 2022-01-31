@@ -37,7 +37,10 @@ class LoginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener{
                 if(it.isSuccessful){
-                    Log.d("LoginActivity", "Welcome ${it.result?.user?.email}")
+                    Log.d("LoginActivity", "Welcome user id ${it.result?.user?.email}")
+                    var intent = Intent(this, DashboardActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK. or (Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                     return@addOnCompleteListener
                 }
             }

@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         }
         registerBtn.setOnClickListener {
             performRegister()
-            imageUpload()
     }
         photo_holder.setOnClickListener {
             var intent = Intent(Intent.ACTION_PICK)
@@ -87,11 +86,15 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid Email / Password", Toast.LENGTH_SHORT).show()
             return
         }
-    //            Log.d("MainActivity", "Email $email")
+    //            Login the user with email and password
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Log.d("MainActivity", "Success ${it.result?.user?.uid}")
+                    imageUpload()
+                    var intent = Intent(this, DashboardActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK. or (Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                     return@addOnCompleteListener
                 }
             }
