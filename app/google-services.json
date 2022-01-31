@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864418864685",
+    "project_id": "mymessenger-386ff",
+    "storage_bucket": "mymessenger-386ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864418864685:android:ad494dee71a07a6bbce2a4",
+        "android_client_info": {
+          "package_name": "com.evan.mymessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864418864685-0els0q86iqp8knic9bfichv6vk3mj2a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2rn_nlIO0J1HeUmZusklierhR6Y2i6nU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864418864685-0els0q86iqp8knic9bfichv6vk3mj2a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
