@@ -1,13 +1,14 @@
-package com.evan.mymessenger
+package com.evan.mymessenger.messages
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.evan.mymessenger.registration.LoginActivity
+import com.evan.mymessenger.registration.MainActivity
+import com.evan.mymessenger.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

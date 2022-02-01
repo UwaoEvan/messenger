@@ -10,13 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMessenger">
         <activity
-            android:name=".NewMessageActivity"
+            android:name=".messages.ChatActivity"
             android:exported="false" >
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".NewMessageActivity"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".messages.ChatActivity"/>
         </activity>
         <activity
-            android:name=".DashboardActivity"
+            android:name=".messages.NewMessageActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".messages.NewMessageActivity" />
+        </activity>
+        <activity
+            android:name=".messages.DashboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".registration.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".registration.MainActivity"
             android:exported="true" />
     </application>
 

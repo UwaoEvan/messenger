@@ -6,10 +6,13 @@
         <entry key="app/src/main/res/drawable/button_rounded.xml" value="0.1325" />
         <entry key="app/src/main/res/drawable/imageselector.xml" value="0.1045" />
         <entry key="app/src/main/res/drawable/inputs_rounded.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.228125" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_message.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/chat_from.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/chat_to.xml" value="0.25" />
         <entry key="app/src/main/res/layout/user_info.xml" value="0.12454710144927536" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.228125" />
       </map>

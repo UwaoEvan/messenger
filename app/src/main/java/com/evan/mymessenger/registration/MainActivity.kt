@@ -1,14 +1,16 @@
-package com.evan.mymessenger
+package com.evan.mymessenger.registration
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import com.evan.mymessenger.R
+import com.evan.mymessenger.messages.DashboardActivity
+import com.evan.mymessenger.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -102,6 +104,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-class User(val uid: String, val userName: String, val profileImageUrl: String){
-    constructor(): this("","","")
-}
