@@ -45,7 +45,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener{
-                Log.d("LoginActivity", "Failed")
+                Toast.makeText(this, "Invalid details", Toast.LENGTH_SHORT).show()
+                Log.d("LoginActivity", "Failed ${it.message}")
                 return@addOnFailureListener
             }
     }

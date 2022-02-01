@@ -69,17 +69,14 @@ class MainActivity : AppCompatActivity() {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/${uid}")
 
-        val user = User(uid, username_register.text.toString(),profileImageUrl)
+        val user = User(uid, username_register.text.toString().replaceFirstChar{it.uppercase()},profileImageUrl)
         ref.setValue(user)
             .addOnSuccessListener {
                 Log.d("MainActivity", "Finally saved the user to database")
             }
     }
 
-    class User(val uid: String, val userName: String, val profileImageUrl: String)
-
     private fun performRegister(){
-        val username = username_register.text
         val email = email_register.text.toString()
         val password = password_register.text.toString()
         if(email.isNullOrEmpty() || password.isNullOrEmpty()){
@@ -104,3 +101,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+class User(val uid: String, val userName: String, val profileImageUrl: String){
+    constructor(): this("","","")
+}
