@@ -7,7 +7,7 @@
     tools:context=".messages.ChatActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/chat_input"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:ems="10"
@@ -17,11 +17,11 @@
         android:hint="Enter Message"
         android:paddingLeft="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/send_button"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -29,10 +29,10 @@
         android:paddingVertical="10dp"
         android:text="Send"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toEndOf="@+id/chat_input"
+        app:layout_constraintTop_toTopOf="@+id/chat_input" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chats_Flow"
@@ -40,7 +40,7 @@
         android:layout_height="540dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:background="@android:color/holo_green_light"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/chat_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

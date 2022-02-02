@@ -4,24 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_marginVertical="10dp"
+    android:layout_marginLeft="5dp"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chatTo_imageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/chatTo_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView from me to yoy fhhhvbfhbfhbfhvbbfbf"
         android:padding="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/inputs_rounded"
         android:maxWidth="220dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/chatTo_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
