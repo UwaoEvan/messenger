@@ -18,7 +18,6 @@ import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.chat_from.view.*
 import kotlinx.android.synthetic.main.chat_to.view.*
-import kotlinx.android.synthetic.main.user_info.view.*
 
 class ChatActivity : AppCompatActivity() {
     val adapter = GroupAdapter<GroupieViewHolder>()
@@ -39,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun listenForMessages(){
 
-        val fromId = FirebaseAuth.getInstance()?.uid
+        val fromId = FirebaseAuth.getInstance().uid
         val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
         val toId = user?.uid
         val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId")
@@ -79,26 +78,25 @@ class ChatActivity : AppCompatActivity() {
 
     private fun sendMessage() {
 
-            val text = chat_input.text.toString()
-            val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
-            val toId = user?.uid
-            val fromId = FirebaseAuth.getInstance()?.uid
-
-            val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
-            val toRef = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
-            if (toId == null || fromId == null) return
+        val text = chat_input.text.toString()
+        val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
+        val toId = user?.uid
+        val fromId = FirebaseAuth.getInstance().uid
+        if (toId == null || fromId == null) return
+        val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId").push()
+        val toRef = FirebaseDatabase.getInstance().getReference("/user-messages/$toId/$fromId").push()
 
             val chatMessage = ChatMessage(ref.key!!, text, fromId, toId, System.currentTimeMillis() / 1000)
             ref.setValue(chatMessage)
                 .addOnSuccessListener {
-                    chat_input.text.clear()
                     chats_Flow.scrollToPosition(adapter.itemCount -1)
-                    Log.d("MainActivity", "Saved our chat message: ${ref.key}")
+                    chat_input.text.clear()
                 }
             toRef.setValue(chatMessage)
-                .addOnSuccessListener {
-
-                }
+        val latestFromRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+            latestFromRef.setValue(chatMessage)
+        val latestToRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+                latestToRef.setValue(chatMessage)
         }
 }
 

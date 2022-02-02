@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.evan.mymessenger.R
 import com.evan.mymessenger.models.User
+import com.evan.mymessenger.views.UserItem
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -61,14 +62,3 @@ class NewMessageActivity : AppCompatActivity() {
     }
 }
 
-
-class UserItem(val user: User): Item<GroupieViewHolder>(){
-    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.username_list.text = user.userName
-        Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.profile_imageView)
-    }
-
-    override fun getLayout(): Int {
-        return R.layout.user_info
-    }
-}
